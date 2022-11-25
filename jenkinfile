@@ -1,0 +1,29 @@
+node {
+    
+	
+	stage ('git clone'){
+	
+	git branch: 'main', credentialsId: 'shashi', url: 'https://github.com/Shivachinna1234/ruchitha.git'
+	}
+	
+	stage ('java version') {
+	        sh 'java --version'
+	}
+	stage ('maven version') {
+	        sh 'mvn --version'
+	}
+	stage ('mvn validate') {
+	        sh 'mvn validate'
+	}
+	stage ('maven compile') {
+	        sh 'mvn compile'
+	}
+	stage ('maven test') {
+	        sh 'mvn test'
+	}
+	
+	stage ('maven package') {
+	        sh 'mvn package'
+	}
+	
+	
